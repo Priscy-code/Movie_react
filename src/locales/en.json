@@ -1,0 +1,12 @@
+{
+    "welcome": "Welcome to Priscy Movie Database",
+    "search": "Search for movie",
+    "switchTheme": "Switch to {{theme}} Mode",
+    "genre": "Genre",
+    "plot": "Plot",
+    "cast": "Cast",
+    "director": "Director",
+    "ratings": "Ratings",
+    "noRatings": "No ratings available"
+}
+

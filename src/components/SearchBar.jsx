@@ -50,25 +50,41 @@ const SearchBar = () => {
    }
 
     return(
-        <div className="flex items-center p-4 rounded border">
-            <h2>Movie Searching </h2>
-            <input type="text"
-            value= {search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search for movie" />
+        <div className="item-center  bg-green-500 rounded border m:p-10 sm:pb-8 lg:p-10 xl:pb-8 space-y-6 max-w-xl mx-auto">
+            {/* <div className="bg-blue border-slate-100 rounded  sm:p-10 sm:pb-8 lg:p-10 xl:pb-8 space-y-6 max-w-xl mx-auto "> */}
+            <h2 className="text-2xl font-bold mb-4 text-center">Movie Searching </h2>
 
-            <button onClick={handlesumbit}>Search</button>
-            { error && <p>{error}</p>}
+            <div className="flex justify-center space-x-4">
+                <input type="text"
+                value= {search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search for movie" />
+
+                 <button onClick={handlesumbit} className="bg-blue-500 justify-center text-white px-4 py-2 rounded hover:bg-white-600 transition">Search</button>
+
+            </div>
+     
+           
+            { error && <p className="text-red-500 text-center">{error}</p>}
             {!selectedMovie && userData.map((movie) => (
-                <div key = {movie.imdbID} onClick={() =>handleMovieClick(movie.imdbID)}>
-                    <img src={movie.Poster} alt={movie.Title} />
-                    <h3>{movie.Title}</h3>
-                    <p>Released: {movie.Year}</p>
+                
+                <div key = {movie.imdbID} 
+                className="bg-pink border-slate-300 rounded shadow-md p-4 hover:shadow-lg transition cursor-pointer"
+                 onClick={() =>handleMovieClick(movie.imdbID)}>
+
+                    <img src={movie.Poster} 
+                    alt={movie.Title} 
+                    className="w-full h-64 object-cover rounded mb-4"/>
+
+                    <h3 className="text-lg font-semibold">{movie.Title}</h3>
+                    <p className="text-sm text-gray-600">Released: {movie.Year}</p>
 
                 </div>
             ))}
             {selectedMovie && <MovieDetails movie={selectedMovie}/>}
+       
         </div>
+        
     )
  }
  export default SearchBar

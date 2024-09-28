@@ -1,0 +1,11 @@
+{
+  "welcome": "Bienvenido a la base de datos de películas de Priscy",
+  "search": "Buscar película",
+  "switchTheme": "Cambiar a modo {{theme}}",
+  "genre": "Género",
+  "plot": "Trama",
+  "cast": "Reparto",
+  "director": "Director",
+  "ratings": "Calificaciones",
+  "noRatings": "No hay calificaciones disponibles"
+}
