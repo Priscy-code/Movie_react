@@ -54,7 +54,7 @@ const SearchBar = () => {
             {/* <div className="bg-blue border-slate-100 rounded  sm:p-10 sm:pb-8 lg:p-10 xl:pb-8 space-y-6 max-w-xl mx-auto "> */}
             <h2 className="text-2xl font-bold mb-4 text-center">Movie Searching </h2>
 
-            <div className="flex  flex-col justify-center space-x-4">
+            <div className="flex justify-center space-x-4">
                 <input type="text"
                 value= {search}
                 onChange={(e) => setSearch(e.target.value)}

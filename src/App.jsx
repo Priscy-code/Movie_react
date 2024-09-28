@@ -46,15 +46,15 @@ const App = () => {
 
     <div className={`min-h-screen ${theme === 'light' ? 'bg-white' : 'bg-gray-900'} transition duration-500`}>
       <div className="container mx-auto p-5 ">
-      <header className='flex flex-col justify-between item-center py-5'>
-        <h1 className={`text-3xl font-bold ${theme == 'light' ? 'text-black' : 'text-white'} transition duration-500 mb-4`}>{t('Welcome to Priscy Movie Datbase')} </h1>
+      <header className='flex justify-between item-center py-5'>
+        <h1 className={`text-3xl font-bold ${theme == 'light' ? 'text-black' : 'text-white'} transition duration-500  text-center`}>{t('Welcome to Priscy Movie Datbase')} </h1>
         <button onClick={toggleTheme}
-        className={`px-4 py-2 rounded ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black'} transition duration-500`}>
+        className={`px-4 py-2 item-center  rounded ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black'} transition duration-500`}>
           Switch to {theme === "light" ? "Dark" : "Light"}
         </button>
 
-        <div className='flex flex-col mt-2 '>
-          <button className={`px-4 py-2 font-bold rounded-full ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black' } transition duration-500`} onClick={() => changeLanguage ('en')}>English</button>
+        <div className='flex flex-col space-y-2  '>
+          <button className={`px-4  py-2 font-bold rounded-full ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black' } transition duration-500`} onClick={() => changeLanguage ('en')}>English</button>
           <button className={`px-4 py-2 font-bold rounded-full ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black'} transition duration-500`} onClick={() => changeLanguage('es')}>Espanol</button>
         </div>
       </header>
