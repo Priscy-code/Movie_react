@@ -22,7 +22,7 @@ const SearchBar = () => {
     try{
         // use HTTPS instead of HTTP
         const response = await fetch(
-            `http://www.omdbapi.com/?s=${encodeURIComponent(search)}&apikey=${apikey}`
+            `https://www.omdbapi.com/?s=${encodeURIComponent(search)}&apikey=${apikey}`
              );
         const data =await response.json();
         if(data.Response === "True"){
