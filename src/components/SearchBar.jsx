@@ -20,13 +20,15 @@ const SearchBar = () => {
     } setError('')
 
     try{
-        const response = await axios.get(
-            `http://www.omdbapi.com/?s=${search}&apikey=${apikey}`
-        );
-        if(response.data.Response === "True"){
-            setUserdata(response.data.Search)
+        // use HTTPS instead of HTTP
+        const response = await fetch(
+            `http://www.omdbapi.com/?s=${encodeURIComponent(search)}&apikey=${apikey}`
+             );
+        const data =await response.json();
+        if(data.Response === "True"){
+            setUserdata(data.Search)
         }else{
-            setError(response.data.Error);
+            setError(data.Error);
             setUserdata([]);
         }
     } catch (error) {
@@ -36,15 +38,19 @@ const SearchBar = () => {
 
    const handleMovieClick = async (imdbID) => {
     try{
-        const response = await axios.get(
-            `http://www.omdbapi.com/?i=${imdbID}&apikey=${apikey}`
+        // const response = await axios.get(
+        //     `http://www.omdbapi.com/?i=${imdbID}&apikey=${apikey}`
+        // );
+        const response = await fetch(
+            `https://www.omdbapi.com/?i=${imdbID}&apikey=${apikey}`
         );
-        if(response.data.Response === "True"){
-            setSelectedMovie(response.data)
+        const data = await response.json();
+        if(data.Response === "True"){
+            setSelectedMovie(data)
         }else{
-            setError(response.data.Error)
+            setError(data.Error)
         }
-    }catch{error}{
+    } catch{error}{
         setError("An error occurred while fetching movie data")
     }
    }
