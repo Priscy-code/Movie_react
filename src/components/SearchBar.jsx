@@ -1,6 +1,9 @@
 import { useState } from "react"
 import axios from "axios";
 import MovieDetails from "./MovieDetails";
+import {SearchIcon} from '@heroicons/react/solid'
+import { useTranslation } from "react-i18next";
+
 
 const SearchBar = () => {
     const [search, setSearch] = useState('');
@@ -55,18 +58,24 @@ const SearchBar = () => {
     }
    }
 
+   const {t} = useTranslation()
+
+
     return(
-        <div className="item-center  bg-green-500 rounded border m:p-10 sm:pb-8 lg:p-10 xl:pb-8 space-y-6 max-w-xl mx-auto">
-            {/* <div className="bg-blue border-slate-100 rounded  sm:p-10 sm:pb-8 lg:p-10 xl:pb-8 space-y-6 max-w-xl mx-auto "> */}
-            <h2 className="text-2xl font-bold mb-4 text-center">Movie Searching </h2>
+        <div className="item-center  bg-customBlue rounded border m:p-10 sm:pb-8 lg:p-10 xl:pb-8 space-y-6 max-w-xl mx-auto">
+            
+               <h1 className="text-3xl font-bold text-black text-center ">{t('welcome') } to Priscy Movie Datbase </h1>
 
             <div className="flex justify-center space-x-4">
                 <input type="text"
                 value= {search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search for movie" />
+                placeholder="Search for movie" 
+                className="w-34 px-4 py-2 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500"/>
 
-                 <button onClick={handlesumbit} className="bg-blue-500 justify-center text-white px-4 py-2 rounded hover:bg-white-600 transition">Search</button>
+                <span className="absolute inset-y-0 left-0 pl-3 flex item-center pointer-events-none"><SearchIcon className="h-5 w-5 text=gray-500"></SearchIcon></span>
+
+                 <button onClick={handlesumbit} className="bg-black justify-center text-white px-4 py-2 rounded hover:bg-white-600 transition">Search</button>
 
             </div>
      

@@ -6,7 +6,11 @@ module.exports = {
   ],
   darkMode:false,
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customBlue: '#6575C8',
+      }
+    },
   },
   plugins: [],
 }
