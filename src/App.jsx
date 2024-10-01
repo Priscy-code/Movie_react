@@ -7,6 +7,10 @@ import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import en from './locales/en.json';
 import es from './locales/es.json';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MovieDetails from './components/Movie';
+import log from './assets/image/log.png'
+import MovieDetails from './components/MovieDetails';
 
 
 i18next.use(initReactI18next).init({
@@ -46,21 +50,29 @@ const App = () => {
 
     <div className={`min-h-screen ${theme === 'light' ? 'bg-white' : 'bg-gray-900'} transition duration-500`}>
       <div className="container mx-auto p-5 ">
-      <header className='flex justify-end space-x item-center py-5'>
-       
-        <button onClick={toggleTheme}
-        className={`px-4 py-2 item-center rounded ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black'} transition duration-500 `}>
+        
+      <header className='flex justify-between space-x-4 item-center py-5'>
+       <img src={log} alt="logo" className='w-24 h-16' />
+     
+
+        <div className='flex items-center space-x-6  '>
+          <button onClick={toggleTheme}
+          className={`px-4 py-2 item-center rounded ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black'} transition duration-500 `}>
           Switch to {theme === "light" ? "Dark" : "Light"}
         </button>
-
-        <div className='flex space-y-2  '>
-          <button className={`px-4  py-2 font-bold rounded-full ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black' } transition duration-500`} onClick={() => changeLanguage ('en')}>English</button>
-          <button className={`px-4 py-2 font-bold rounded-full ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black'} transition duration-500`} onClick={() => changeLanguage('es')}>Espanol</button>
+          <button className={`px-4  py-2 font-bold rounded-md ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black' } transition duration-500`} onClick={() => changeLanguage ('en')}>English</button>
+          <button className={`px-4 py-2 font-bold rounded ${theme === 'light' ? 'bg-black text-white' : 'bg-white text-black'} transition duration-500`} onClick={() => changeLanguage('es')}>Espanol</button>
         </div>
       </header>
-      <main className='mt-10'>
-        <SearchBar/>
-      </main>
+      <div className='mt-10'>
+        <Router>
+          <Routes>
+            <Route path = '/' element= {<SearchBar/>}></Route>
+            <Route path ='/movie/:imdbID' element = {<MovieDetails/>}></Route>
+          </Routes>
+        </Router>
+        
+      </div>
       
     </div>
     </div>
