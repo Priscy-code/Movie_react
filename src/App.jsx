@@ -8,7 +8,6 @@ import { initReactI18next } from 'react-i18next';
 import en from './locales/en.json';
 import es from './locales/es.json';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MovieDetails from './components/Movie';
 import log from './assets/image/log.png'
 import MovieDetails from './components/MovieDetails';
 

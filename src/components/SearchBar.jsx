@@ -85,26 +85,29 @@ const handleMovieClick = (imdbID) => {
                 </div>
                  <button onClick={handlesumbit} 
                  className="bg-black text-white px-4 py-2 rounded hover:bg-white-600 transition">Search</button>
+                 
+                 
             </div>
-     
-           <div className="bg-gray-500">
-             { error && <p className="text-red-500 text-center">{error}</p>}
-            {!error && userData.map((movie) => (
-                
-                <div key = {movie.imdbID} 
-                className=" border border-slate-300 rounded shadow-md p-4 hover:shadow-lg transition cursor-pointer"
-                 onClick={() =>handleMovieClick(movie.imdbID)}>
 
-                    <img src={movie.Poster} 
-                    alt={movie.Title} 
-                    className="w-full h-64 object-cover rounded mb-4"/>
+            <div className="flex flex-col sm:flex-row justify-center sm:space-x-4 space-x-4 sm:space-y-0 bg-cutomBlue">
+                 { error && <p className="text-red-500 text-center">{error}</p>}
+                 {!error && userData.map((movie) => (
+                    <div key = {movie.imdbID} 
+                      className="flex flex-col space-x-4 border border-slate-300 rounded shadow-md p-4 hover:shadow-lg transition cursor-pointer"
+                      onClick={() =>handleMovieClick(movie.imdbID)}>
+
+                        <img src={movie.Poster} 
+                        alt={movie.Title} 
+                        className="w-32 h-32 object-cover rounded "/>
 
                     <h3 className="text-lg font-semibold">{movie.Title}</h3>
                     <p className="text-sm text-gray-600">Released: {movie.Year}</p>
 
                 </div>
             ))}
-           </div>
+            </div>
+     
+     
            
             
        
