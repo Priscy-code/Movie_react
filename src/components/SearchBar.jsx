@@ -89,22 +89,25 @@ const handleMovieClick = (imdbID) => {
                  
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-center sm:space-x-4 space-x-4 sm:space-y-0 bg-cutomBlue">
+            <div className="bg-white-500 p-6" >
                  { error && <p className="text-red-500 text-center">{error}</p>}
-                 {!error && userData.map((movie) => (
+                 {!error && (
+                    <div className="flex space-x-4 overflow-x-auto ">
+                        {userData.map((movie) => (
                     <div key = {movie.imdbID} 
-                      className="flex flex-col space-x-4 border border-slate-300 rounded shadow-md p-4 hover:shadow-lg transition cursor-pointer"
+                      className="flex-none w-48 sm:w-60 lg:w-72 xl:w-80 border border-slate-300 rounded shadow-md p-4 hover:shadow-lg transition cursor-pointer bg-white-700 dark:bg-gray-800"
                       onClick={() =>handleMovieClick(movie.imdbID)}>
 
                         <img src={movie.Poster} 
                         alt={movie.Title} 
-                        className="w-32 h-32 object-cover rounded "/>
+                        className="w-full h-64 object-cover rounded mb-4  "/>
 
                     <h3 className="text-lg font-semibold">{movie.Title}</h3>
                     <p className="text-sm text-gray-600">Released: {movie.Year}</p>
 
                 </div>
             ))}
+                    </div>)}
             </div>
      
      
