@@ -42,12 +42,12 @@ const MovieDetails = () => {
   }
 
   return (
-    <div className="p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg max-w-4xl mx-auto">
+    <div className="p-6 sm:p-8 md:p-10 lg:p-12 xl:p-14 ligt:bg-customBlue  dark:bg-gray-800 rounded-lg shadow-lg max-w-4xl mx-auto">
 
       <div className="flex justify-center mb-6">
         <img src={movie.Poster} alt={movie.Title} className="rounded-lg shadow-lg max-w-xs" />
       </div>
-       <h2 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-gray-200">
+       <h2 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-black-200">
         {movie.Title} <span className="text-xl">({movie.Year})</span>
       </h2>
 

@@ -18,7 +18,7 @@ const SearchBar = () => {
    const apikey = "14fbfc29"
 
    const handlesumbit = async() => {
-    if(search.trim() === ""){
+    if(search.trim() === "True"){
         setError("Please enter a movie title");
         return;
     } setError('')
@@ -66,7 +66,7 @@ const handleMovieClick = (imdbID) => {
 
 
     return(
-        <div className="min-h-screen p-5 bg-gray-100 ">
+        <div className="min-h-screen p-5 light:bg-gray-100 dark:bg-black-100 ">
             <div className="container mx-auto p-5">
                 <div className="item-center bg-customBlue rounded border p-4 sm:p-6 md:p-8 lg:p-10 xl:pb-8 space-y-6 max-w-xl mx-auto">
                      <h1 className="text-2xl sm:text-3xl font-bold text-black text-center ">{t('welcome') } to Priscy Movie Database </h1>
@@ -77,9 +77,9 @@ const handleMovieClick = (imdbID) => {
                      value= {search}
                      onChange={(e) => setSearch(e.target.value)}
                      placeholder="Search for movie" 
-                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500"/>
+                     className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 leading-none"/>
 
-                <span className="absolute inset-y-0 right-6 pl-3 flex item-center pointer-events-none m-2">
+                <span className="absolute inset-y-0 right-3 flex item-center pointer-events-none ">
                     <SearchIcon className="h-5 w-5 text-gray-500"></SearchIcon></span>
 
                 </div>
