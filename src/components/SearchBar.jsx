@@ -92,10 +92,10 @@ const handleMovieClick = (imdbID) => {
             <div className="bg-white-500 p-6" >
                  { error && <p className="text-red-500 text-center">{error}</p>}
                  {!error && (
-                    <div className="flex space-x-4 overflow-x-auto ">
+                    <div className="flex flex-wrap justify-between">
                         {userData.map((movie) => (
                     <div key = {movie.imdbID} 
-                      className="flex-none w-48 sm:w-60 lg:w-72 xl:w-80 border border-slate-300 rounded shadow-md p-4 hover:shadow-lg transition cursor-pointer bg-white-700 dark:bg-gray-800"
+                      className="flex-none w-48 sm:w-60 md:w-72 lg:w-80 border border-slate-300 rounded shadow-md p-4 hover:sadow-lg transition cursor-pointer light:bg-white-700 dark:bg-gray-800 m-2"
                       onClick={() =>handleMovieClick(movie.imdbID)}>
 
                         <img src={movie.Poster} 
