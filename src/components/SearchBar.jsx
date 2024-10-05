@@ -79,7 +79,7 @@ const handleMovieClick = (imdbID) => {
                      placeholder="Search for movie" 
                      className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 leading-none"/>
 
-                <span className="absolute inset-y-0 right-3 flex item-center pointer-events-none ">
+                <span className="absolute inset-y-0 right-3 flex items-center pointer-events-none ">
                     <SearchIcon className="h-5 w-5 text-gray-500"></SearchIcon></span>
 
                 </div>
@@ -95,7 +95,7 @@ const handleMovieClick = (imdbID) => {
                     <div className="flex flex-wrap justify-between">
                         {userData.map((movie) => (
                     <div key = {movie.imdbID} 
-                      className="flex-none w-48 sm:w-60 md:w-72 lg:w-80 border border-slate-300 rounded shadow-md p-4 hover:sadow-lg transition cursor-pointer light:bg-white-700 dark:bg-gray-800 m-2"
+                      className="flex-none w-48 sm:w-60 md:w-72 lg:w-48h border border-slate-300 rounded shadow-md p-4 hover:sadow-lg transition cursor-pointer light:bg-white-700 dark:bg-gray-800 m-2"
                       onClick={() =>handleMovieClick(movie.imdbID)}>
 
                         <img src={movie.Poster} 
