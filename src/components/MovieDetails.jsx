@@ -47,7 +47,7 @@ const MovieDetails = () => {
       <div className="flex justify-center mb-6">
         <img src={movie.Poster} alt={movie.Title} className="rounded-lg shadow-lg max-w-xs" />
       </div>
-       <h2 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-black-200">
+       <h2 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 light:text-gray-900 dark:text-white-200">
         {movie.Title} <span className="text-xl">({movie.Year})</span>
       </h2>
 
