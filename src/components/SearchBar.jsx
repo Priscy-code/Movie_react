@@ -10,12 +10,15 @@ const SearchBar = () => {
     const [userData, setUserdata] = useState([]);   
     const [error, setError] = useState("");
     const navigate = useNavigate();
+
     // const[selectedMovie, setSelectedMovie] = useState(null)
     // const handlesearch = (e) => {
     //     setSearch(e.target.value)
     // }
 
    const apikey = "14fbfc29"
+
+   
 
    const handlesumbit = async() => {
     if(search.trim() === "True"){
