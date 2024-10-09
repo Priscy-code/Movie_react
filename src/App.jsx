@@ -14,6 +14,7 @@ import Header from './components/pages/Header';
 import Footer from './components/Footer';
 import Aboutme from './components/pages/Aboutus';
 import Categories from './components/pages/Categories';
+import Contact from './components/pages/Contact';
 
 
 i18next.use(initReactI18next).init({
@@ -74,6 +75,7 @@ const App = () => {
             <Route path ='/movie/:imdbID' element = {<MovieDetails/>}></Route>
             <Route path='/about' element={<Aboutme/>}></Route>
             <Route path='/categories' element= {<Categories/>}></Route>
+            <Route path = '/contact' element={<Contact/>}></Route>
           </Routes>
           
         
